@@ -1,2 +1,0 @@
-# literalurachallenge
-Challenge Literalura
