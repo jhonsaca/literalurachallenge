@@ -6,11 +6,16 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+
 public class GutendexAPI {
+
     public String obtenerDatos(String url) {
-        HttpClient client = HttpClient.newHttpClient();
+        System.out.println(url);
+        HttpClient client = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.ALWAYS).build();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
+                .headers("User-Agent", "Java HttpClient")
+                .headers("Accept", "application/json").GET()
                 .build();
         HttpResponse<String> response = null;
         try {

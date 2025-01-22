@@ -14,6 +14,7 @@ public class LiteraluraApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		Main main = new Main();
+		main.menu();
 	}
 }
