@@ -1,7 +1,6 @@
 package com.challenge.literalura.author;
 
 import com.challenge.literalura.books.Book;
-import com.challenge.literalura.books.BookDTO;
 
 import java.util.List;
 
@@ -18,9 +17,9 @@ public class Author {
     private List<Book> books;
 
     public Author(List<AuthorDTO> author) {
-        this.author_name = author.get(0).author_name();
-        this.birth = Integer.valueOf(author.get(0).birth());
-        this.death = Integer.valueOf(author.get(0).death());
+        this.author_name = author.getFirst().author_name();
+        this.birth = Integer.valueOf(author.getFirst().birth());
+        this.death = Integer.valueOf(author.getFirst().death());
     }
 
     public Long getId() {
